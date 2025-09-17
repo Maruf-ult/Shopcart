@@ -7,15 +7,22 @@ import CartIcon from './CartIcon'
 import FavouriteButton from './FavouriteButton'
 import SignIn from './SignIn'
 import MobileMenu from './MobileMenu'
-import { currentUser } from '@clerk/nextjs/server'
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+// import { currentUser } from '@clerk/nextjs/server'
 import { ClerkLoaded } from '@clerk/nextjs'
-import { SignedIn, UserButton } from '@clerk/clerk-react'
+// import { SignedIn, UserButton } from '@clerk/clerk-react'
 const Header = async () => {
     
-     const user = await currentUser();
+//      const user = await currentUser();
 
   return (
-     <header className='bg-white py-5 '>
+     <header className='bg-white/70 py-5 sticky top-0 z-50  backdrop-blur-md'>
           <Container className='flex items-center justify-between text-lightColor'>
              <div className='w-auto md:w-1/3 flex items-center gap-2.5 justify-start md:gap-0'>
                    <MobileMenu/>
@@ -26,12 +33,14 @@ const Header = async () => {
                     <SearchBar/>
                     <CartIcon/>
                     <FavouriteButton/>
-                     <ClerkLoaded>
+                      <ClerkLoaded>
+                        <SignedOut>
+                              <SignIn/>
+                        </SignedOut>
                          <SignedIn>
                                <UserButton/>
                          </SignedIn>
-                            {!user && <SignIn/>}
-                     </ClerkLoaded>
+                     </ClerkLoaded> 
                </div>
           </Container>
      </header>
