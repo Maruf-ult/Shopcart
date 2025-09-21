@@ -4,14 +4,17 @@ import { ShoppingBag } from 'lucide-react';
 import React from 'react'
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
+// import useStore from '@/store';
 
 interface Props{
-     product:Product;
+     product:Product | null | undefined;
      className?:string;
 }
 
 const AddToCartButton = ({product,className}:Props) => {
-    
+     
+   // const {addItem,getItem} = useStore();
+
      const isOutofStock = product?.stock === 0;
   
   const handleAddToCart = () => {
