@@ -6,7 +6,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const FavouriteButton = ({
+const FavoriteButton = ({
   showProduct = false,
   product,
 }: {
@@ -62,4 +62,4 @@ const FavouriteButton = ({
   );
 };
 
-export default FavouriteButton;
+export default FavoriteButton;
