@@ -2,7 +2,6 @@
 
 import { headerData } from "@/constants/data";
 import { X } from "lucide-react";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { FC } from "react";
 import Logo from "./Logo";
