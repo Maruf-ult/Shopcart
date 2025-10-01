@@ -1,11 +1,14 @@
+"use client";
+
 import { headerData } from "@/constants/data";
 import { X } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FC } from "react";
 import Logo from "./Logo";
 import SocialMedia from "./SocialMedia";
 import { useOutsideCLick } from "@/hooks";
+
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
@@ -13,15 +16,28 @@ interface SidebarProps {
 
 const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
-  const sidebarRef = useOutsideCLick<HTMLDivElement>(onClose)
+  const router = useRouter();
+  const sidebarRef = useOutsideCLick<HTMLDivElement>(onClose);
+
+  const handleNavigation = (href: string) => {
+    if (href !== pathname) {
+      router.push(href);
+    }
+    setTimeout(() => {
+      onClose();
+    }, 500); 
+  };
 
   return (
     <div
-      className={`fixed inset-y-0 h-screen left-0 z-50 w-full bg-black/50 text-white/80 shadow-xl ${
+      className={`fixed inset-y-0 h-screen left-0 z-50 w-full bg-black/50 text-white/80 shadow-xl transition-transform duration-300 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      }hoverEffect`}
+      } hoverEffect`}
     >
-      <div className="min-w-72 max-w-96 bg-black h-screen p-10 border-r border-r-shop_light_green flex flex-col gap-6">
+      <div
+        ref={sidebarRef}
+        className="min-w-72 max-w-96 bg-black h-screen p-10 border-r border-r-shop_light_green flex flex-col gap-6"
+      >
         <div className="flex items-center justify-between gap-5">
           <Logo className="text-white" spanDesign="group-hover:text-white" />
           <button
@@ -32,18 +48,21 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        <div ref={sidebarRef} className="flex flex-col space-y-3.5 font-semibold tracking-wide">
+        <div className="flex flex-col space-y-3.5 font-semibold tracking-wide">
           {headerData?.map((item) => (
-            <Link
-              href={item?.href}
+            <button
               key={item?.title}
-              className={`hover:text-shop_light_green hoverEffect ${pathname === item?.href && "text-white/70"}`}
+              onClick={() => handleNavigation(item?.href)}
+              className={`text-left hover:text-shop_light_green hoverEffect ${
+                pathname === item?.href ? "text-white/70" : ""
+              }`}
             >
               {item?.title}
-            </Link>
+            </button>
           ))}
         </div>
-        <SocialMedia/>
+
+        <SocialMedia />
       </div>
     </div>
   );
