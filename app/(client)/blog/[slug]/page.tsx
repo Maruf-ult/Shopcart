@@ -207,7 +207,7 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
               key={index}
               className="text-lightColor flex items-center justify-between text-sm font-medium"
             >
-              <p>{blogcategories[0]?.title}</p>
+              <p>{blogcategories?.[0]?.title ?? "Untitled"}</p>
               <p className="text-darkColor font-semibold">{`(1)`}</p>
             </div>
           ))}
