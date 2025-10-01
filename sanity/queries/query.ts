@@ -62,25 +62,22 @@ const BLOG_CATEGORIES = defineQuery(
   }`
 );
 
-const OTHERS_BLOG_QUERY = defineQuery(`*[
-  _type == "blog"
-  && defined(slug.current)
-  && slug.current != $slug
-]|order(publishedAt desc)[0...$quantity]{
-...
-  publishedAt,
-  title,
-  mainImage,
-  slug,
-  author->{
-    name,
-    image,
-  },
-  categories[]->{
+const OTHERS_BLOG_QUERY = defineQuery(`
+  *[_type == "blog" && defined(slug.current) && slug.current != $slug]
+  | order(publishedAt desc)[0...$quantity]{
+    _id,
+    _type,
+    _createdAt,
+    _updatedAt,
+    _rev,
     title,
-    "slug": slug.current,
+    slug,
+    mainImage,
+    publishedAt,
+    author->{ name, image },
+    blogcategories[]->{ title, "slug": slug.current }
   }
-}`);
+`);
 export {
   BRANDS_QUERY,
   LATEST_BLOG_QUERY,
