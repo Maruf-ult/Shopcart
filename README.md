@@ -1,9 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
-#
-https://shopify-ugl8.vercel.app/
-#
+## Live Link
+```
+https://shopcart-swart.vercel.app/
+
+```
 First, run the development server:
 
 ```bash
