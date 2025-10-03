@@ -1,11 +1,10 @@
 import Stripe from "stripe";
 
 if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("STRIPE_SECRET_KEY is not defined");
+  throw new Error("❌ STRIPE_SECRET_KEY is not defined in environment variables");
 }
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-09-30.clover",
-});
+// ✅ safest: let Stripe use the default apiVersion configured in your account
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default stripe;
