@@ -242,6 +242,47 @@ export type Order = {
   orderDate?: string;
 };
 
+// export type Product = {
+//   _id: string;
+//   _type: "product";
+//   _createdAt: string;
+//   _updatedAt: string;
+//   _rev: string;
+//   name?: string;
+//   slug?: Slug;
+//   images?: Array<{
+//     asset?: {
+//       _ref: string;
+//       _type: "reference";
+//       _weak?: boolean;
+//       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+//     };
+//     hotspot?: SanityImageHotspot;
+//     crop?: SanityImageCrop;
+//     _type: "image";
+//     _key: string;
+//   }>;
+//   description?: string;
+//   price?: number;
+//   discount?: number;
+//   categories?: Array<{
+//     _ref: string;
+//     _type: "reference";
+//     _weak?: boolean;
+//     _key: string;
+//     [internalGroqTypeReferenceTo]?: "category";
+//   }>;
+//   stock?: number;
+//   brand?: {
+//     _ref: string;
+//     _type: "reference";
+//     _weak?: boolean;
+//     [internalGroqTypeReferenceTo]?: "brand";
+//   };
+//   status?: "new" | "hot" | "sale";
+//   variant?: "gadget" | "appliances" | "refrigerators" | "others";
+//   isFeatured?: boolean;
+// };
 export type Product = {
   _id: string;
   _type: "product";
@@ -265,13 +306,20 @@ export type Product = {
   description?: string;
   price?: number;
   discount?: number;
-  categories?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "category";
-  }>;
+
+  // 🔹 FIXED: allow categories itself to be null
+  categories?: (
+    | string
+    | {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "category";
+      }
+    | null
+  )[] | null;
+
   stock?: number;
   brand?: {
     _ref: string;
