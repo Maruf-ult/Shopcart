@@ -2,10 +2,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 ## Live Link
-```
-https://shopcart-swart.vercel.app/
 
-```
+##
+https://shopcart-swart.vercel.app/
+##
 First, run the development server:
 
 ```bash
