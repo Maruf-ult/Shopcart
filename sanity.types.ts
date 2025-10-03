@@ -329,7 +329,7 @@ export type Product = {
   };
   status?: "new" | "hot" | "sale";
   variant?: "gadget" | "appliances" | "refrigerators" | "others";
-  isFeatured?: boolean;
+  isFeatured?: boolean; 
 };
 
 export type Brand = {
@@ -407,6 +407,7 @@ export type Category = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+   productCount?: number;
 };
 
 export type SanityImageCrop = {
