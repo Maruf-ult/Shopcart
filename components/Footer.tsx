@@ -5,6 +5,8 @@ import FooterTop from "./FooterTop";
 import Logo from "./Logo";
 import SocialMedia from "./SocialMedia";
 import { SubText, SubTitle } from "./ui/text";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 const Footer = () => {
   return (
@@ -61,15 +63,15 @@ const Footer = () => {
               offers
             </SubText>
             <form className="space-y-3 ">
-              <input
+              <Input
                 placeholder="Enter your email"
                 type="email"
                 required
                 suppressHydrationWarning
               />
-              <button className="w-full" suppressHydrationWarning>
+              <Button className="w-full" suppressHydrationWarning>
                 Subscribe
-              </button>
+              </Button>
             </form>
           </div>
         </div>
