@@ -8,8 +8,9 @@ interface Props {
 
 const HomeTabBar = ({ selectedTab, onTabSelect }: Props) => {
   return (
-    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-      <div className="flex flex-wrap gap-3 text-sm font-semibold w-full">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-5 w-full">
+      {/* Category Buttons */}
+      <div className="flex flex-wrap items-center gap-3 text-sm font-semibold w-full md:w-auto">
         {productType?.map((item) => (
           <button
             onClick={() => onTabSelect(item?.title)}
@@ -23,15 +24,24 @@ const HomeTabBar = ({ selectedTab, onTabSelect }: Props) => {
             {item?.title}
           </button>
         ))}
+
+        {/* ✅ On small screens, keep See all slightly to the right with a gap */}
+        <div className="block md:hidden ml-auto">
+          <Link
+            href="/shop"
+            className="border border-shop_light_green/30 px-6 py-2 text-sm font-semibold rounded-full hover:bg-shop_light_green hover:border-shop_light_green hover:text-white hoverEffect"
+          >
+            See all
+          </Link>
+        </div>
       </div>
 
-      <div className="md:flex-shrink-0">
+      {/* ✅ Desktop & medium screen version (unchanged) */}
+      <div className="hidden md:block md:flex-shrink-0">
         <Link
           href="/shop"
           className="border border-shop_light_green/30 
-                     px-36 py-2   /* bigger on mobile */
-                     text-base font-semibold
-                     md:px-6 md:py-3 md:text-sm /* normal size on desktop */
+                     px-6 py-3 text-sm font-semibold
                      rounded-full 
                      hover:bg-shop_light_green hover:border-shop_light_green hover:text-white hoverEffect
                      w-full md:w-auto text-center"
