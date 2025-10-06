@@ -1,12 +1,12 @@
 "use client";
-import { Product } from "@/sanity.types";
-import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { ShoppingBag } from "lucide-react";
+import { Product } from "@/sanity.types";
 import useStore from "@/store";
+import { ShoppingBag } from "lucide-react";
 import toast from "react-hot-toast";
 import PriceFormatter from "./PriceFormatter";
 import QuantityButtons from "./QuantityButtons";
+import { Button } from "./ui/button";
 
 interface Props {
   product: Product;
@@ -48,7 +48,7 @@ const AddToCartButton = ({ product, className }: Props) => {
           onClick={handleAddToCart}
           disabled={isOutOfStock}
           className={cn(
-            "w-full bg-shop_dark_green/80 text-lightBg shadow-none border border-shop_dark_green/80 font-semibold tracking-wide text-white hover:bg-shop_dark_green hover:border-shop_dark_green hoverEffect",
+            "w-full bg-shop_dark_green/80 text-lightBg shadow-none border border-shop_dark_green/80 font-semibold tracking-wide text-white hover:bg-shop_dark_green hover:border-shop_dark_green hoverEffect text-base sm:text-sm",
             className
           )}
         >
