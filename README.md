@@ -1,6 +1,6 @@
-# 🛒 Shopcart — Modern E-Commerce Platform
+# 🛒 Shopezy — Modern E-Commerce Platform
 
-Shopcart is a full-featured, modern e-commerce web application built using **Next.js 15**, **Sanity CMS**, and **Stripe**.  
+Shopezy is a full-featured, modern e-commerce web application built using **Next.js 15**, **Sanity CMS**, and **Stripe**.  
 It provides a fast, scalable, and visually appealing shopping experience with powerful features like product management, secure authentication, and seamless payments.
 
 ---
@@ -80,14 +80,14 @@ It provides a fast, scalable, and visually appealing shopping experience with po
 
 ## 🛠️ Setup & Installation
 
-To get started with Shopcart, follow these steps:
+To get started with Shopezy, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/shopcart.git
+git clone https://github.com/your-username/shopezy.git
 
 # Navigate into the project folder
-cd shopcart
+cd shopezy
 
 # Install dependencies
 npm install
