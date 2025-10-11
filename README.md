@@ -1,40 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Shopcart — Modern E-Commerce Platform
 
-## Getting Started
-## Live Link
+Shopcart is a full-featured, modern e-commerce web application built using **Next.js 15**, **Sanity CMS**, and **Stripe**.  
+It provides a fast, scalable, and visually appealing shopping experience with powerful features like product management, secure authentication, and seamless payments.
 
-##
-https://shopcart-swart.vercel.app/
-##
-First, run the development server:
+---
+
+## 🚀 Tech Stack
+
+### **Frontend Framework**
+- **Next.js 15** — React-based framework for server-side rendering, routing, and performance optimization.
+- **React 18** — Core UI library powering the entire front-end.
+- **TypeScript 5** — Type-safe JavaScript for scalable and maintainable development.
+
+---
+
+## 🧩 Main Dependencies
+
+### **UI & Styling**
+- **Tailwind CSS 4** — Utility-first CSS framework for fast, responsive design.
+- **Styled Components 6** — CSS-in-JS styling for component-level customization.
+- **Lucide React** — Beautiful, consistent icon set for UI elements.
+- **Radix UI** (`@radix-ui/react-*`) — Accessible, low-level UI primitives for dialogs, tooltips, checkboxes, and more.
+- **tw-animate-css** — Smooth animation utilities for Tailwind transitions and effects.
+
+---
+
+### **State Management**
+- **Zustand** — Lightweight and fast state management library with a simple API for global store management.
+
+---
+
+### **CMS & Content Management**
+- **Sanity v4** — Headless CMS for managing product data, content, and images.
+- **Next-Sanity** — Integration layer for querying and managing Sanity content in Next.js.
+- **@sanity/image-url** — Utility for generating optimized and responsive image URLs from Sanity assets.
+
+---
+
+### **Authentication**
+- **Clerk** (`@clerk/nextjs`) — Complete authentication and user management system providing sign-in, sign-up, and session handling.
+
+---
+
+### **Payments**
+- **Stripe** — Secure payment gateway integration for checkout and order management.
+- **@types/stripe** — TypeScript definitions for strong type safety during Stripe integration.
+
+---
+
+### **UX & Utility Libraries**
+- **Embla Carousel React** — Lightweight carousel/slider component for product displays and promotions.
+- **React Hot Toast** — Elegant, minimal toast notification system.
+- **Day.js** — Modern, lightweight date utility library.
+- **cmdk** — Command palette-style search interface for fast in-app navigation.
+- **SWR** — React data fetching library with built-in caching and revalidation.
+- **Class Variance Authority / clsx / tailwind-merge** — Utility libraries for managing conditional Tailwind classes and dynamic component variants.
+
+---
+
+## ⚙️ Development Tools
+- **ESLint 9** — Code linting and formatting for consistent code quality.
+- **TypeScript** — Type-safe development with advanced IntelliSense support.
+- **Tailwind CSS + PostCSS** — Styling, preprocessing, and build optimization.
+- **Sanity CLI** — Tools for schema extraction and type generation for Sanity data models.
+
+---
+
+## 🧠 Scripts
+
+| Command | Description |
+|----------|--------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build production-ready app |
+| `npm run start` | Run production build |
+| `npm run lint` | Lint project for code issues |
+| `npm run typegen` | Sync Sanity schema and types |
+
+---
+
+## 🛠️ Setup & Installation
+
+To get started with Shopcart, follow these steps:
 
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/shopcart.git
+
+# Navigate into the project folder
+cd shopcart
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
