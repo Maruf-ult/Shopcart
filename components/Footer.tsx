@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo />
             <SubText>
-              Discover curated furniture collections at Shopify, blending style
+              Discover curated furniture collections at Shopezy, blending style
               and comfort to elevate your living spaces.
             </SubText>
             <SocialMedia

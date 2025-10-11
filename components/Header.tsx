@@ -6,7 +6,6 @@ import FavouriteButton from "./FavouriteButton";
 import HeaderMenu from "./HeaderMenu";
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
-import SearchBar from "./SearchBar";
 import SignIn from "./SignIn";
 // import { currentUser } from '@clerk/nextjs/server'
 import { getMyOrders } from "@/sanity/queries";
@@ -31,7 +30,6 @@ const Header = async () => {
         </div>
         <HeaderMenu />
         <div className="w-auto mid:w-1/3 flex items-center justify-end gap-5">
-          <SearchBar />
           <CartIcon />
           <FavouriteButton />
           <ClerkLoaded>

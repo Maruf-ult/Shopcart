@@ -30,7 +30,7 @@ const HomeTabBar = ({ selectedTab, onTabSelect }: Props) => {
         <div className="block md:hidden">
           <Link
             href="/shop"
-            className="border border-shop_light_green/30 px-6 py-2 text-sm font-semibold rounded-full hover:bg-shop_light_green hover:border-shop_light_green hover:text-white hoverEffect"
+            className="border border-shop_light_green/30 px-6 py-2   text-sm font-semibold rounded-full hover:bg-shop_light_green hover:border-shop_light_green hover:text-white hoverEffect"
           >
             See all
           </Link>

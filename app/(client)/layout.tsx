@@ -6,10 +6,10 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Shopcart online store",
-    default: "Shopcart online store",
+    template: "%s - Shopezy online store",
+    default: "Shopezy online store",
   },
-  description: "Shopcart online store, Your one stop shop for all your needs",
+  description: "Shopezy online store, Your one stop shop for all your needs",
 };
 
 export default function RootLayout({
